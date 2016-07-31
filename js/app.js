@@ -5,7 +5,7 @@ var getCurrent = function(city) {
 	};
 
 	$.ajax({
-		url: '//api.openweathermap.org/data/2.5/weather',
+		url: 'https://api.openweathermap.org/data/2.5/weather',
 		data: request,
 		dataType: 'jsonp',
 		type: 'GET',
