@@ -20,6 +20,24 @@ var getCurrent = function(city) {
 	});
 };
 
+var showResults = function(obj) {
+	var result = $('.templates .main').clone();
+
+	var cityName = result.find('#location span');
+	cityName.text(obj.name);
+
+	var tempp = result.find('#tmp span');
+	tempp.text(tempConverter(obj.main.temp));
+
+	var misc = result.find('#humidity');
+	misc.text(obj.main.humidity);
+	
+	var misc = result.find('#wind');
+	misc.text(obj.wind.speed);
+	
+	return result;
+};
+
 $(function(){
 	$('.city').submit(function(e){
 		e.preventDefault();
