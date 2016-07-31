@@ -49,7 +49,7 @@ $(function(){
 		var cityID = $("input[name='city']").val();
 		$("input[name='city']").val('');
 		getCurrent(cityID);
-		getForecast(cityID);
+		//getForecast(cityID);
 	});
 	
 });
