@@ -1,0 +1,83 @@
+* {box-sizing: border-box;}
+
+.search {
+	margin: 1.5em auto;
+	width: 15em;
+	border: 1px solid black;
+	border-radius: 0.35em;
+	background-color: #e6f7ff;
+}
+.search input, .search button {
+	border: none;
+	background-color: unset;
+}
+
+.main {
+	width: 40em;
+	height: 29em;
+	border: 1px solid #cce6ff;
+	border-radius: 0.5em;
+	border-style: outset;
+	margin: 3em auto;
+	padding: 1em;
+	background-color: #e6f2ff;
+}
+
+#wtrDscrp {
+	margin-bottom: 1em;
+}
+
+
+#temp, #misc {
+	width: 50%;
+	height: 7em;
+	display: inline-block;
+}
+
+#location, #day, #wtrDscrp {
+	padding: 0.1em;
+}
+
+#location {
+	font-size: 1.5em;
+	font-weight: 500;
+}
+
+#tmp {
+	width: 4.5em;
+	height: 4.5em;
+	margin: 0;
+	display: inline-block;
+}
+
+#deg {
+	width: 4em;
+	height: 1.3em;
+	display: inline-block;
+	position: relative;
+	top: -1.8em;
+	margin: 0;
+}
+
+#tmp span {
+	font-size: 4em;
+	font-weight: 500;
+}
+
+#temp {
+	float: left;
+}
+
+#hrForecast {
+	height: 8em;
+	margin: 0 auto;
+}
+
+#dayForecast {
+	height: 8em;
+	margin: 0 auto;
+}
+
+.hidden {
+	display: none;
+}
