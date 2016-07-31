@@ -38,6 +38,11 @@ var showResults = function(obj) {
 	return result;
 };
 
+var tempConverter = function(temp) {
+	var far = (temp * 9/5) - 459.67;
+	return Math.floor(far);
+};
+
 $(function(){
 	$('.city').submit(function(e){
 		e.preventDefault();
