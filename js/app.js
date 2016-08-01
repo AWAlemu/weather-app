@@ -1,56 +1,51 @@
-var getCurrent = function(city) {
-	var request = {
-		id: city,
-		APPID: '8dac38d11acbe3e6ecf035a449582cac',
-	};
-
-	$.ajax({
-		url: 'https://api.openweathermap.org/data/2.5/weather',
-		data: request,
-		dataType: 'jsonp',
-		type: 'GET',
-	})
-	.done(function(result){
-		console.log(result);
-		var rslt = showResults(result);
-		$('.result').append(rslt);
-	})
-	.fail(function(){
-
-	});
+//Model constructor 
+var Model = function() {
+	this.location = '';
+	this.autofillResults = {};
+	this.onChange = null;
 };
 
-var showResults = function(obj) {
-	var result = $('.templates .main').clone();
-
-	var cityName = result.find('#location span');
-	cityName.text(obj.name);
-
-	var tempp = result.find('#tmp span');
-	tempp.text(tempConverter(obj.main.temp));
-
-	var misc = result.find('#humidity');
-	misc.text(obj.main.humidity);
-	
-	var misc = result.find('#wind');
-	misc.text(obj.wind.speed);
-	
-	return result;
+//bind a method to Model prototype
+Model.prototype.getAutocomplete = function(value){
+	//process make api call
+	this.location = value;
+	//this.autofillResults = getLocation(value);
+	//calls show Auto Complete
+	if(this.onChange) {
+		//this.onChange(this.autofillResults);
+		this.onChange(this.location);
+	}
+};
+//define a View constructor
+var View = function(elementSelector, rSelector) {
+	this.element = $(elementSelector);
+	this.resultsElement = $(rSelector);
+	this.onChange = null;
+	this.element.on('input', this.onInput.bind(this));
+	//this.resultsElement.on('click', this.onClick.bind(this));
 };
 
-var tempConverter = function(temp) {
-	var far = (temp * 9/5) - 459.67;
-	return Math.floor(far);
+View.prototype.onInput = function() {
+	var value = this.element.val();
+	if (this.onChange) {
+		this.onChange(value);
+	}
 };
 
-$(function(){
-	$('.city').submit(function(e){
-		e.preventDefault();
-		var cityID = $("input[name='city']").val();
-		$("input[name='city']").val('');
-		getCurrent(cityID);
-		//getForecast(cityID);
-	});
-	
+//display autocomplete output
+View.prototype.showAutocomplete = function(text) {
+	this.resultsElement.html(text);
+};
+
+//define a Controller constructor 
+var Controller = function(model, view) {
+	view.onChange = model.getAutocomplete.bind(model);
+	model.onChange = view.showAutocomplete.bind(view);
+};
+
+//construct MVC objects 
+document.addEventListener('DOMContentLoaded', function() {
+	var model = new Model();
+	var view = new View('#autocomplete', '#results ul');
+	var controller = new Controller(model, view);
 });
-

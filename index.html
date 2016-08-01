@@ -10,10 +10,19 @@
 <body>
 	<form class="city">
 		<div class="search">
-			<input type="text" name="city" placeholder=" Search city, zip" required>
+			<input type="text" name="city" id="autocomplete" placeholder=" Search city, zip" required>
 			<button type="submit"><i class="fa fa-search"></i></button> 
-		</div>
+		<div id="results">
+    		<ul></ul>
+    	</div>
+    </div>
 	</form>
+	
+    <div class="templates">
+    	<li class="autoCompList">
+    		<div></div>
+		</li>
+    </div>
 	<div class="result"></div>
 	<div class="templates hidden">	
 	<div class="main">	
