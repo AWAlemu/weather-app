@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn1.iconfinder.com/data/icons/nuvola2/128x128/apps/colors.png">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
+
 <body>
-	<form class="city" autocomplete="off">
-		<div class="search">
-			<input type="text" name="city" id="autocomplete" placeholder=" Search city, zip" required>
-			<button type="submit"><i class="fa fa-search"></i></button> 
-		<div id="results" class='hidden'>
-    		<ul></ul>
-    	</div>
+    <form class="city" autocomplete="off" id="userInput">
+        <div class="search">
+            <input type="text" name="city" id="autocomplete" placeholder="Search weather by city, ZIP" required/><button type="submit"><i class="fa fa-search"></i></button>
+	        <div id="autoCompResults" class='hidden'>
+	        	<ul></ul>
+	   		</div>
+	   	</div>
+    </form>
+    <div class="weatherResult"></div>
+    <div class="templates hidden">
+        <li class="autoCompList">
+            <div></div>
+        </li>
+        <div class="main">
+            <div id="location"><span></span></div>
+            <div id="day"><span id="dy"></span></div>
+            <div id="wtrDscrp"><span id="dscrp"></span></div>
+            <div id="temp">
+                <div>
+                	<div id="icon"><img src=""></div>
+                    <div id="tmp">
+                        <span></span>
+                    </div>
+                    <div id="deg">
+                        <span>&#8457</span>
+                    </div>
+                </div>
+            </div>
+            <div id="misc">
+                <div class="humidity">
+                    Humidity: <span id="humidity"></span>
+                </div>
+                <div class="wind">
+                    Wind: <span id="wind"></span>
+                </div>
+            </div>
+            <div id="hrForecast"></div>
+            <div id="dayForecast">
+            	<div id="df">
+            		<div id=""></div>
+            		<div></div>
+            	</div>
+            </div>
+        </div>
     </div>
-	</form>
-	
-    <div class="templates">
-    	<li class="autoCompList">
-    		<div></div>
-		</li>
-    </div>
-	<div class="result"></div>
-	<div class="templates hidden">	
-	<div class="main">	
-		<div id="location"><span></span></div>
-		<div id="day"><span>Saturday</span></div>
-		<div id="wtrDscrp"><span>Scattered Thunderstorms</span></div>
-		<div id="temp">
-			<div>
-				<div id="tmp">
-					<span></span>
-				</div>
-				<div id="deg" >
-					<span>&#8457</span>
-				</div>		
-			</div>
-		</div>
-		<div id="misc">
-			<div>
-				Humidity: <span id="humidity"></span>
-			</div>
-			<div>
-				Wind: <span id="wind"></span>
-			</div>
-		</div>
-		<div id="hrForecast"></div>
-		<div id="dayForecast"></div>
-	</div>
-	</div>
-	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

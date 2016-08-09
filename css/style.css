@@ -5,39 +5,62 @@ ul, li {
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	background: url('http://cdn7.staztic.com/app/a/2513/2513219/weather-live-hd-wallpapers-2-4-s-307x512.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .search {
 	margin: 1.5em auto 0 auto;
 	width: 23em;
 	height: 1.4em;
-	border: 1px solid black;
-	border-radius: 0.35em;
-	background-color: #e6f7ff;
 }
 
 .search input, .search button {
-	border: none;
-	background-color: unset;
+	height: 2em;
+	border: 1px solid gainsboro;
+	margin: 0;
 }
 
 .search input {
 	width: 20em;
+	padding-left: 0.5em;
+	outline: none;
 }
 
-#results {
+.search button {
+	width: 2em;
+	background-color: #3b78e7;
+	border: 0;
+	padding: auto;
+}
+
+#autoCompResults {
 	width: 20em;
 	margin: 0;
+	padding-left: 0.5em;
 	border: 0.25px solid black;
+}
+
+#autoCompResults li {
+	cursor: pointer;
+}
+
+#autoCompResults li:hover {
+	background-color: #f2f2f2;
 }
 
 .main {
 	width: 40em;
 	height: 29em;
 	border: 1px solid #cce6ff;
-	border-radius: 0.5em;
+	border-radius: 0.15em;
 	border-style: outset;
 	margin: 3em auto;
 	padding: 1em;
-	background-color: #e6f2ff;
+	background-color: #fff;
 }
 
 #wtrDscrp {
@@ -52,11 +75,25 @@ ul, li {
 
 #location, #day, #wtrDscrp {
 	padding: 0.1em;
+	text-transform: capitalize;
+}
+
+.humidity, .wind {
+	padding: 0.2em;
 }
 
 #location {
 	font-size: 1.5em;
 	font-weight: 500;
+}
+
+#icon, #icon img {
+	height: 4.5em;
+	width: 4.5em;
+}
+
+#icon {
+	float: left;
 }
 
 #tmp {
