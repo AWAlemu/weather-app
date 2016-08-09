@@ -42,7 +42,7 @@ body {
 	margin: 0;
 	padding-left: 0.5em;
 	background-color: #fff;
-	border: 0.25px solid black;
+	border: 0.25px solid #fff;
 }
 
 #autoCompResults li {

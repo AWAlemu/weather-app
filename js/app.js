@@ -213,7 +213,7 @@ var getCurrent = function(lt, lng) {
     $.ajax({
             url: '//api.openweathermap.org/data/2.5/weather',
             data: request,
-            dataType: 'jsonp',
+            dataType: 'json',
             type: 'GET',
         })
         .done(function(result) {
