@@ -136,7 +136,7 @@ View.prototype.showWeather = function(obj) {
     cityName.text(obj.city);
     
     var icon = result.find('#icon img');
-    icon.attr('src', 'http://openweathermap.org/img/w/' + obj.icon + '.png');
+    icon.attr('src', 'https://openweathermap.org/img/w/' + obj.icon + '.png');
     
     var tempp = result.find('#tmp span');
     tempp.text(obj.temp);
@@ -211,7 +211,7 @@ var getCurrent = function(lt, lng) {
         APPID: '8dac38d11acbe3e6ecf035a449582cac',
     };
     $.ajax({
-            url: '//api.openweathermap.org/data/2.5/weather',
+            url: 'https://api.openweathermap.org/data/2.5/weather',
             data: request,
             dataType: 'jsonp',
             type: 'GET',
