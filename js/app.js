@@ -211,7 +211,7 @@ var getCurrent = function(lt, lng) {
         APPID: '8dac38d11acbe3e6ecf035a449582cac',
     };
     $.ajax({
-            url: 'api.openweathermap.org/data/2.5/weather',
+            url: '//api.openweathermap.org/data/2.5/weather',
             data: request,
             dataType: 'jsonp',
             type: 'GET',
@@ -220,7 +220,7 @@ var getCurrent = function(lt, lng) {
             getTimeZone(lt, lng);
             passCurrent(result);
         })
-        .fail(function() {
+        .fail(function(jqXHR, error) {
             var errorElem = showError(error);
             $('.weatherResult').append(errorElem);
         });
