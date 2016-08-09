@@ -214,6 +214,7 @@ var getCurrent = function(lt, lng) {
             url: '//api.openweathermap.org/data/2.5/weather',
             data: request,
             dataType: 'json',
+            jsonp: false,
             type: 'GET',
         })
         .done(function(result) {
